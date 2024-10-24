@@ -1,14 +1,24 @@
-from unittest import TestCase
-from regexp import *
+from RegexpFinder import RegexpFinder
+from regexp import regexp
 
 
-class RegexpTesting(TestCase):
-    def test_default(self):
-        self.assertTrue(word_is_tandem("blabla"))
-        self.assertTrue(word_is_tandem("123123"))
-        self.assertFalse(word_is_tandem("blablabl"))
-        self.assertFalse(word_is_tandem("Blabla"))
+rf = RegexpFinder(regexp)
+input_string: str
+choice: str
 
-    def test_empty_string(self):
-        self.assertFalse(word_is_tandem(""))
-        self.assertFalse(word_is_tandem(" "))
+while True:
+    print("1 - find tandem words in your string\n2 - find tandem words on page by URL\n3 - find tandem words in file\n4 - Exit")
+    choice = input("Enter the number (1 - 4): ")
+    while all(["1" != choice, "2" != choice, "3" != choice, "4" != choice]):
+        choice = input("Wrong input, human. Enter the number (1 - 4): ")
+    if choice == "1":
+        input_string = input("Enter the string: ")
+        print(rf.find_in_string(input_string))
+    elif choice == "2":
+        input_string = input("Enter the URL: ")
+        print(rf.find_on_page(input_string))
+    elif choice == "3":
+        input_string = input("Enter the filename: ")
+        print(rf.find_in_file(input_string))
+    else:
+        break
