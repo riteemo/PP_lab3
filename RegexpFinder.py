@@ -3,6 +3,7 @@ from requests import get
 from requests.exceptions import MissingSchema
 
 
+# Класс для поиска регулярных выражений
 class RegexpFinder:
     def __init__(self, regexp: str):
         self.regexp = regexp

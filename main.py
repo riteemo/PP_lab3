@@ -2,9 +2,9 @@ from RegexpFinder import RegexpFinder
 from regexp import regexp
 
 
-rf = RegexpFinder(regexp)
-input_string: str
-choice: str
+rf = RegexpFinder(regexp) # экземпляр класса
+input_string: str # введённая пользователем строка
+choice: str # выбор пользователя для цикла
 
 while True:
     print("1 - find tandem words in your string\n2 - find tandem words on page by URL\n3 - find tandem words in file\n4 - Exit")

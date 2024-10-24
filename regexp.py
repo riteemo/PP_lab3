@@ -1,6 +1,7 @@
 from re import findall, fullmatch
 
 
+# Выражение для тандемов
 regexp = r"\b(\w+)\1\b"
 
 def word_is_tandem(word: str, regexp: str) -> bool:
